@@ -1,0 +1,47 @@
+#user_profile
+##user_profile
+user=fk(User, ondelete=models.cascade)
+address=models.textfield()
+mobile_no=models.charfields(max_lenght=12, null=true, blank=true)
+
+#post
+##post
+title=models.charfields()
+date=models.datefield()
+status=models.boolenfield()
+##media
+post=fk(post, ondelete=models.cascade)
+images=models.imagefields(null=true, blank=true)
+videos=models.filefieds(null=true, blank=true)
+
+#friends
+
+##myuser
+user=onetoone(User)
+friends=models.manytomanyfield(User)
+
+#groups
+
+##post
+post=models.fk(post)
+date=models.datefield()
+status=models.boolenfield()
+
+##groupMember
+admin=models.onetoone(User)
+groupMember=models.manytomanyfield()
+
+#page
+
+##post
+title=models.charfields()
+date=models.datefield()
+status=models.boolenfield()
+##media
+post=fk(post, ondelete=models.cascade)
+images=models.imagefields(null=true, blank=true)
+videos=models.filefieds(null=true, blank=true)
+
+##pageMember
+admin=models.onetoone(User)
+groupMember=models.manytomanyfield()
