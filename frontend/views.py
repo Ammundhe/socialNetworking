@@ -1,8 +1,8 @@
 from django.shortcuts import  redirect, render
 from django.views import View
 from friends.models import Myuser
-from post.models import Post, MediaFiles
-from .forms import mediaForm, Postform
+from post.models import Post, MediaFiles, Post_comment
+from .forms import mediaForm, Postform, PostCommentform
 from datetime import date
 
 
@@ -10,11 +10,13 @@ class HomePage(View):
     template_name='home-page.html'
     postform=Postform
     mediaform=mediaForm
+    commentform=PostCommentform
 
     def get(self, request):
         friends=Myuser.objects.values().filter(user=request.user)
         textform=self.postform()
-        Mediaform=self.mediaform
+        Mediaform=self.mediaform()
+        postcommentform=self.commentform()
         friends_id=[]
         for friend in friends:
             friends_id.append(friend['friends_id'])
@@ -24,7 +26,7 @@ class HomePage(View):
             'posts':posts,
             'textform':textform,
             'Mediaform':Mediaform,
-            
+            'postcommentform':postcommentform,
         }
         return render(request, self.template_name, context)
 
@@ -62,6 +64,16 @@ class HomePage(View):
             if request.POST.get("text"):
                 print(request.POST.get("text"))
                 return redirect("HomePage")
+            if request.POST.get("comment"):
+                comment=request.POST.get("comment")
+                id=request.POST.get("post_id")
+                Post_comment.objects.create(
+                    post_id=id,
+                    comment=comment,
+                    user=request.user
+                )
+                return redirect("HomePage")
+
         except:
             friends=Myuser.objects.values().filter(user=request.user)
             textform=self.postform()

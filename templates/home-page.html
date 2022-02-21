@@ -271,25 +271,9 @@
                             <div class="post-comt-box">
                               <form method="post">
                                 {% csrf_token %}
-                                <textarea name="text"
-                                  placeholder="Post your comment"
-                                ></textarea>
-                                
-                                <div class="smiles-bunch">
-                                  <i class="em em---1"></i>
-                                  <i class="em em-smiley"></i>
-                                  <i class="em em-anguished"></i>
-                                  <i class="em em-laughing"></i>
-                                  <i class="em em-angry"></i>
-                                  <i class="em em-astonished"></i>
-                                  <i class="em em-blush"></i>
-                                  <i class="em em-disappointed"></i>
-                                  <i class="em em-worried"></i>
-                                  <i class="em em-kissing_heart"></i>
-                                  <i class="em em-rage"></i>
-                                  <i class="em em-stuck_out_tongue"></i>
-                                </div>
-                                <button type="submit"></button>
+                                <input type="hidden" name="post_id" value={{post.id}} >
+                                {{postcommentform}}
+                                <button type="submit" style="color:black">Post</button>
                               </form>
                             </div>
                           </li>
