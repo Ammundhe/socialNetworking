@@ -1,4 +1,3 @@
-from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -31,7 +30,8 @@ class PageMedia(models.Model):
 
 
 class PageLikes(models.Model):
-    member=models.ManyToManyField(User)
-
+    page=models.ForeignKey(Page, on_delete=models.CASCADE, related_name="page")
+    admin=models.ForeignKey(User, on_delete=models.CASCADE)
+    member=models.ForeignKey(User, on_delete=models.CASCADE, related_name="member")
     def __str__(self) -> str:
         return str(self.admin)

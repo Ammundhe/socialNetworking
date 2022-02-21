@@ -1,4 +1,3 @@
-from tokenize import group
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -30,7 +29,9 @@ class GroupMedia(models.Model):
 
 
 class GroupMember(models.Model):
-    member=models.ManyToManyField(User)
+    group=models.ForeignKey(Group, on_delete=models.CASCADE, related_name="group")
+    admin=models.ForeignKey(User, on_delete=models.CASCADE)
+    group_member=models.ForeignKey(User, on_delete=models.CASCADE, related_name="group_member")
 
     def __str__(self) -> str:
         return str(self.admin)

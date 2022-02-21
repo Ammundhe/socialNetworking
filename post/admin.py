@@ -1,5 +1,5 @@
 from django.contrib import admin, messages
-from post.models import Post, MediaFiles
+from post.models import Post, MediaFiles, Post_comment
 
 def hidePost(self, request, queryset):
     queryset.update(status=False)
@@ -22,3 +22,8 @@ class PostAdmin(admin.ModelAdmin):
     inlines=[mediaFileAdmin]
 
 admin.site.register(Post,PostAdmin)
+
+class PostCommentAdmin(admin.ModelAdmin):
+    list_display=['post','user', 'comment']
+    search_fields=['post', 'user', 'comment']
+admin.site.register(Post_comment, PostCommentAdmin)
