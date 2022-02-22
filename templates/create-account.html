@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="col-lg-6">
+  <div class="central-meta">
+    <div class="editing-info">
+      <h5 class="f-title">
+        <i class="ti-info-alt"></i> User and password
+      </h5>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group half">
+            {{form}}
+        </div>
+
+        <div class="submit-btns">
+          <button type="submit" class="mtr-btn"><span>Next step</span></button>
+          <a href="{% url 'LoginPage' %}" class="mtr-btn"><span>Login</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
