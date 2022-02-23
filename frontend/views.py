@@ -1,3 +1,4 @@
+from email.mime import image
 from django.shortcuts import  redirect, render
 from django.views import View
 from friends.models import Myuser
@@ -35,18 +36,19 @@ class HomePage(View):
 
             if request.POST.get('title'):
                 title=request.POST.get('title')
-                images=request.POST.get('images')
-                videos=request.POST.get('videos')
-                post=Post.objects.create(
+                images=request.FILES.get('images')
+                videos=request.FILES.get('videos')
+                media=Post.objects.create(
                     user=request.user,
                     title=title,
                     date=date.today()
                 )
-                MediaFiles.objects.create(
-                    post=post,
+                file=MediaFiles.objects.create(
+                    post=media,
                     images=images,
-                    videos=videos,
+                    videos=videos
                 )
+                file.save()
                 return redirect("HomePage")
             if request.POST.get("like"):
                 post_id=request.POST.get("like")

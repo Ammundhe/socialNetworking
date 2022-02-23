@@ -22,7 +22,7 @@ class Post(models.Model):
     
 class MediaFiles(models.Model):
     post=models.ForeignKey(Post, on_delete=models.CASCADE, related_name="mediafiles")
-    images=models.ImageField()
+    images=models.ImageField(upload_to='media', null=True, blank=True)
     videos=models.FileField(null=True, blank=True)
 
     def __str__(self) -> str:

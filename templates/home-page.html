@@ -9,7 +9,7 @@
         <img src="images/resources/admin2.jpg" alt="" />
       </figure>
       <div class="newpst-input">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
           {{textform}}
           <div class="attachments">

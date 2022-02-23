@@ -22,8 +22,8 @@ class PagePost(models.Model):
 class PageMedia(models.Model):
     page=models.ForeignKey(Page, on_delete=models.CASCADE)
     Page_post=models.ForeignKey(PagePost, on_delete=models.CASCADE)
-    Pageimges=models.ImageField(null=True, blank=True)
-    Page_videos=models.FileField(null=True, blank=True)
+    Pageimges=models.ImageField(upload_to="media/", null=True, blank=True)
+    Page_videos=models.FileField(upload_to="media/", null=True, blank=True)
 
     def __str__(self) -> str:
         return str(self.group_post)

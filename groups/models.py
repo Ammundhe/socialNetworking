@@ -21,8 +21,8 @@ class GroupPost(models.Model):
 
 class GroupMedia(models.Model):
     group_post=models.ForeignKey(GroupPost, on_delete=models.CASCADE)
-    group_imges=models.ImageField(null=True, blank=True)
-    group_videos=models.FileField(null=True, blank=True)
+    group_imges=models.ImageField(upload_to="media/", null=True, blank=True)
+    group_videos=models.FileField(upload_to="media/", null=True, blank=True)
 
     def __str__(self) -> str:
         return str(self.group_post)
