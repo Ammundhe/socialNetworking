@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from friends.models import Myuser
+from datetime import date
+
 
 class Page(models.Model):
     name=models.CharField(max_length=255)
@@ -30,6 +31,7 @@ class MediaFiles(models.Model):
 
 class Post_comment(models.Model):
     post=models.ForeignKey(Post, on_delete=models.CASCADE, related_name="postcomment")
+    date_time=models.DateField(default=date.today())
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     comment=models.TextField()
 

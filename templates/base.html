@@ -283,7 +283,7 @@
         <div class="top-area">
           <ul class="main-menu">
             <li>
-              <a href="#" title="">Home</a>
+              <a href="/" title="">Home</a>
 
             </li>
             <li>
@@ -493,10 +493,6 @@
                         <h4 class="widget-title">Shortcuts</h4>
                         <ul class="naves">
                           <li>
-                            <i class="ti-clipboard"></i>
-                            <a href="newsfeed.html" title="">News feed</a>
-                          </li>
-                          <li>
                             <i class="ti-mouse-alt"></i>
                             <a href="inbox.html" title="">Inbox</a>
                           </li>
@@ -505,8 +501,12 @@
                             <a href="fav-page.html" title="">My pages</a>
                           </li>
                           <li>
+                            <i class="ti-files"></i>
+                            <a href="fav-page.html" title="">groups</a>
+                          </li>
+                          <li>
                             <i class="ti-user"></i>
-                            <a href="timeline-friends.html" title="">friends</a>
+                            <a href="{% url 'Friendslist' %}" title="">friends</a>
                           </li>
                           <li>
                             <i class="ti-image"></i>
@@ -523,14 +523,6 @@
                           <li>
                             <i class="ti-bell"></i>
                             <a href="notifications.html" title="">Notifications</a>
-                          </li>
-                          <li>
-                            <i class="ti-share"></i>
-                            <a href="people-nearby.html" title="">People Nearby</a>
-                          </li>
-                          <li>
-                            <i class="fa fa-bar-chart-o"></i>
-                            <a href="insights.html" title="">insights</a>
                           </li>
                           <li>
                             <i class="ti-power-off"></i>

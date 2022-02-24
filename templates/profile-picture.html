@@ -3,17 +3,17 @@
   <div class="central-meta">
     <div class="editing-info">
       <h5 class="f-title">
-        <i class="ti-info-alt"></i>  Basic Information
+        <i class="ti-info-alt"></i>  profile picture and mobile number
       </h5>
 
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group half">
           {{form}}
         </div>
 
         <div class="submit-btns">
-          <button type="submit" class="mtr-btn"><span>Next Step</span></button>
+          <button type="submit" class="mtr-btn"><span>Create Account</span></button>
         </div>
       </form>
     </div>

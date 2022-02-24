@@ -1,11 +1,11 @@
-from email.mime import image
+from multiprocessing import context
 from django.shortcuts import  redirect, render
 from django.views import View
 from friends.models import Myuser
 from post.models import Post, MediaFiles, Post_comment
 from .forms import mediaForm, Postform, PostCommentform
 from datetime import date
-
+from django.contrib.auth.models import User
 
 class HomePage(View):
     template_name='home-page.html'
@@ -92,3 +92,28 @@ class HomePage(View):
                 
             }
             return render(request, self.template_name, context)
+
+
+class Friendlist(View):
+    template_name='friends-list.html'
+
+    def get(self, request):
+        friends=User.objects.all()
+        myfriends=Myuser.objects.filter(user=request.user)
+        context={
+            'friends':friends,
+            'myfriends':myfriends,
+        }
+        return render(request, self.template_name, context)
+    
+    def post(self, request):
+        if request.POST.get('submit'):
+            friends_id=request.POST.get('submit')
+            Myuser.objects.create(
+                user=request.user,
+                friends_id=friends_id
+            )
+        elif request.POST.get('unfriend'):
+            friend_id=request.POST.get('unfriend')
+            friend=Myuser.objects.get(id=friend_id).delete()  
+        return redirect("Friendslist")
