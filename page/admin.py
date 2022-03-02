@@ -32,4 +32,8 @@ class PageAdmin(admin.ModelAdmin):
     actions=[hidePost, unhidePost]
 
 admin.site.register(Page, PageAdmin)
-admin.site.register(PageLikes)
+
+class PagelikeAdmin(admin.ModelAdmin):
+    list_display=['page', 'member']
+    search_fields=['member', 'page']
+admin.site.register(PageLikes, PagelikeAdmin)

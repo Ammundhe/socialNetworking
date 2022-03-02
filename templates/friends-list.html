@@ -67,170 +67,7 @@
                 </div>
               </div>
             </li>
-
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/nearly1.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">sophia Gate</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/nearly6.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">caty lasbo</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/friend-avatar9.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/nearly2.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">sara grey</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/nearly4.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">Sara grey</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/nearly3.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">Sexy cat</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="nearly-pepls">
-                <figure>
-                  <a href="time-line.html" title=""
-                    ><img src="images/resources/friend-avatar9.jpg" alt=""
-                  /></a>
-                </figure>
-                <div class="pepl-info">
-                  <h4><a href="time-line.html" title="">jhon kates</a></h4>
-                  <span>ftv model</span>
-                  <a
-                    href="#"
-                    title=""
-                    class="add-butn more-action"
-                    data-ripple=""
-                    >delete Request</a
-                  >
-                  <a href="#" title="" class="add-butn" data-ripple=""
-                    >Confirm</a
-                  >
-                </div>
-              </div>
-            </li>
           </ul>
-          <button class="btn-view btn-load-more"></button>
         </div>
       </div>
     </div>
@@ -240,7 +77,10 @@
   <aside class="sidebar static">
     <div class="widget friend-list stick-widget">
       <h4 class="widget-title">Friends</h4>
-      <div id="searchDir"></div>
+      <form action="" method="get">
+        <input type="text" name="search">
+        <button type="submit">search</button>
+      </form>
       <ul id="people-list" class="friendz-list">
           {% for friend in friends %}
           <li>
